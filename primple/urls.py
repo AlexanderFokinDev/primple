@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from knowledge_base import views as knowledge_base_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^knowledge_base/$', knowledge_base_views.getList, name='getList')
 ]
