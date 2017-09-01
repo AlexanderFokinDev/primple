@@ -5,7 +5,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 # Create your views here.
-def getList(request):
+def index(request):
 	name = "Knowledge base"
 	html = "<html><body>Hi %s, this seems to have worked</body></html>" % name
 	return HttpResponse(html)
+
+def home(request):
+	return render(request, "index.html")
+
