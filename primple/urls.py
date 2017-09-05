@@ -19,6 +19,14 @@ from knowledge_base import views as knowledge_base_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    #Authenticate
+ 	#url(r'^accounts/login/$', ‘django_test.views.login’),
+	#url(r'^accounts/auth/$', ‘django_test.views.auth_view’),
+	#url(r'^accounts/logout/$', ‘django_test.views.logout’),
+	#url(r'^accounts/loggedin/$', ‘django_test.views.loggedin’),
+	#url(r'^accounts/invalid/$', ‘django_test.views.invalid_login’),
+	#url(r'^accounts/register/$', ‘django_test.views.register_user’),
+	#url(r'^accounts/register_success/$', ‘django_test.views.register_success’),
     #url(r'^knowledge_base/$', knowledge_base_views.getList, name='getList')
     url(r'^knowledge_base/', include('knowledge_base.urls')),
     url(r'^$', knowledge_base_views.home)
