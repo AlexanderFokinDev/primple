@@ -19,6 +19,7 @@ from knowledge_base import views as knowledge_base_views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    
     #Authenticate
  	url(r'^accounts/login/$', knowledge_base_views.login),
 	url(r'^accounts/auth/$', knowledge_base_views.auth_view),
@@ -27,6 +28,10 @@ urlpatterns = [
 	url(r'^accounts/invalid/$', knowledge_base_views.invalid_login),
 	url(r'^accounts/register/$', knowledge_base_views.register_user),
 	url(r'^accounts/register_success/$', knowledge_base_views.register_success),
+
+    # user_desktop
+    url(r'^user_desktop/', knowledge_base_views.user_desktop),
+
     #url(r'^knowledge_base/$', knowledge_base_views.getList, name='getList')
     url(r'^knowledge_base/', include('knowledge_base.urls')),
     url(r'^$', knowledge_base_views.home)
