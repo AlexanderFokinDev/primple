@@ -2,14 +2,27 @@
 
 {% block content %}
 
-<header>
+{% load static %}
 
-<H1>It's your work desktop</H1>
+<div class="container-fluid">
 
-</header>
+	<div class="row">
 
-<div>
-<p>Click <a href="/accounts/logout/">here</a> to logout</p>
+		<div class="col-md-4 col-sm-6 col-xs-12">
+	        <H1>It's your work desktop</H1>
+      	</div>
+
+      	<div class="col-md-4 col-sm-6 col-xs-12">
+	        <a href="/user_desktop/"><img class="logo" src="{% static "img/primple_logo.jpg" %}"></a>	        
+      	</div>
+
+      	<div class="col-md-4 col-sm-6 col-xs-12">
+      		<p>User: {{full_name}}</p> 
+	        <p>Click <a href="/accounts/logout/">here</a> to logout</p>        
+      	</div>
+
+	</div>
+
 </div>
 
 <div>

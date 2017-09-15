@@ -66,18 +66,17 @@ def register_user(request):
 
 def register_success(request):
 	return render(request, "auth/register_success.html")
-
-def check_authenticate(request):
-	if not request.user.is_authenticated:
-		return render(request, "auth/need_authenticate.html")
-
+	
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
 # Main user desktop
 
 def user_desktop(request):
-	check_authenticate(request)
-	return render(request, "user_desktop.html")
+	if request.user.is_authenticated():
+		first_name = request.user.first_name
+		return render(request, "user_desktop.html", {'full_name': first_name})
+	else:
+		return render(request, "auth/need_authenticate.html")
 
 #--------------------------------------------------------------------
