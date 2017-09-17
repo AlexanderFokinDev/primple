@@ -11,9 +11,10 @@ class KnowledgeBase(models.Model):
 	question = models.TextField()
 	response = models.TextField()
 
-	def __init__(self, question, response):
-		self.question = question
-		self.response = response
+	#def __init__(self, question, response):
+		#self.id = id
+	#	self.question = question
+	#	self.response = response
 
 	def __str__(self):
 		return self.question

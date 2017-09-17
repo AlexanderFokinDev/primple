@@ -11,16 +11,21 @@ from django.template.context_processors import csrf
 # Create your views here.
 def index(request):
 
-	check_authenticate(request)
-
-	name = "Knowledge base"
-	html = "<html><body>Hi %s, this seems to have worked</body></html>" % name
-	return HttpResponse(html)
+	if request.user.is_authenticated():
+		name = "Knowledge base"
+		html = "<html><body>Hi %s, this seems to have worked</body></html>" % name
+		return HttpResponse(html)
+	else:
+		return render(request, "auth/need_authenticate.html")
 
 
 # index page
 def home(request):
-	return render(request, "index.html")
+
+	if request.user.is_authenticated():
+		return HttpResponseRedirect('/user_desktop/')
+	else:
+		return render(request, "index.html")
 
 #--------------------------------------------------------------------
 # Authenticate views
@@ -66,7 +71,7 @@ def register_user(request):
 
 def register_success(request):
 	return render(request, "auth/register_success.html")
-	
+
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
