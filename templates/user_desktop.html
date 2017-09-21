@@ -4,32 +4,48 @@
 
 {% load static %}
 
-<div class="container-fluid">
+<!--Main menu start-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-	<div class="row">
+	<a class="navbar-brand" href="/user_desktop/">
+		<img src="{% static "img/primple_logo.jpg" %}" alt="Project simple management">
+	</a>	
 
-		<div class="col-md-4 col-sm-6 col-xs-12">
-	        <H1 class="text-primary">It's your work desktop</H1>
-      	</div>
-
-      	<div class="col-md-4 col-sm-6 col-xs-12">
-	        <a href="/user_desktop/"><img class="logo" src="{% static "img/primple_logo.jpg" %}"></a>	        
-      	</div>
-
-      	<div class="col-md-4 col-sm-6 col-xs-12">
-      		<p>User: {{full_name}}</p> 
-	        <p>Click <a href="/accounts/logout/">here</a> to logout</p>        
-      	</div>
+	<div class="navbar-collapse" id="navbarNavDropdown">
+		
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item active">
+				<a class="nav-link" href="/projects/">Projects</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/knowledge_base/">Knowledge base</a>
+			</li>			
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					Additional
+				</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="#">Action 1</a>
+					<a class="dropdown-item" href="#">Action 2</a>
+					<a class="dropdown-item" href="#">Action 3</a>
+				</div>
+			</li>
+		</ul>
+		
+		<ul class="navbar-nav">
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{full_name}}</a>
+				<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+					<a class="dropdown-item" href="#">Settings</a>
+					<a class="dropdown-item" href="/accounts/logout/">Logout</a>
+				</div>
+			</li>
+		</ul>		
 
 	</div>
 
-	<div class="row">
-		<div class="col-md-4 col-sm-6 col-xs-12">
-	        <p><a href="/knowledge_base/">Knowledge base</a></p>
-      	</div>
-	</div>	
-
-</div>
+</nav>
+<!--Main menu end -->
 
 <div>
 </div>
