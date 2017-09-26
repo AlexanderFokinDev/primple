@@ -11,11 +11,7 @@ class MyRegistrationForm(UserCreationForm):
 	"""MyRegistrationForm - class for register a new user"""
 
 	email = forms.EmailField(required=True)
-	first_name = forms.CharField(required=True)
-
-	class Meta:
-		model = User
-		fields = ('username', 'first_name', 'email', 'password1', 'password2')
+	first_name = forms.CharField(widget=forms.TextInput(attrs={'autofocus':'autofocus', 'required':'required'}))
 	
 	def save(self, commit=True):
 		user = super(MyRegistrationForm, self).save(commit=False)

@@ -1,17 +1,17 @@
-{% extends "base.html" %}
+{% extends "base_unreg.html" %}
 
 {% block content %}
 
 <header>
 
-<H1>You have registered!</H1>
+	<div class="alert alert-success" role="alert">
+		<H5>You have registered!</H5>
+		Click <a href="/accounts/login/" class="alert-link">here</a> to login	
+	</div>
 
 </header>
 
 <div>
-
-<p>Click <a href="/accounts/login/">here</a> to login again</p>
-
 </div>
 
 {% endblock %}

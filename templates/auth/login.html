@@ -1,29 +1,40 @@
-{% extends "base.html" %}
+{% extends "base_unreg.html" %}
 
 {% block content %}
 
 <header>
 
-<H1>Login</H1>
+	<div class="alert alert-success" role="alert">
+		<H5>Login</H5>	
+	</div>
 
 </header>
 
-<div>
+<div class="container-fluid">
 
-{% if form.errors %}
-  <p class="error">Sorry? thats not a valid username or password</p>
-{% endif %}
+	{% if form.errors %}
+	  <p class="error">Sorry? That's not a valid username or password</p>
+	{% endif %}
 
-<form action="/accounts/auth/"" method="post"> {% csrf_token %}
+	<form action="/accounts/auth/"" method="post"> {% csrf_token %}
 
-  <label for="username">User name:</label>
-  <input type="text" name="username" value="" id="username">
-  <label for="password">Password:</label>
-  <input type="password" name="password" value="" id="password">
+		<div class="form-group row">				
+			<label class="col-sm-1 col-form-label" for="username">Username</label>
+			<div class="col-sm-11">
+				<input type="text" name="username" autofocus required value="" id="username">
+			</div>	
+		</div>
 
-  <input type="submit" value="login">
+		<div class="form-group row">				
+			<label class="col-sm-1 col-form-label" for="password">Password</label>
+			<div class="col-sm-11">
+				<input type="password" name="password" value="" id="password">
+			</div>	
+		</div>
 
-</form>
+	  <button type="submit" class="btn btn-primary" value="Login">Login</button>
+
+	</form>
 
 </div>
 

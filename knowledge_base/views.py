@@ -62,10 +62,14 @@ def register_user(request):
 		if form.is_valid():
 			form.save()
 			return HttpResponseRedirect('/accounts/register_success/')
-
-	args = {}
-	args.update(csrf(request))
-	args['form'] = MyRegistrationForm()
+		else:
+			args = {}
+			args.update(csrf(request))
+			args['form'] = MyRegistrationForm(request.POST)
+	else:
+		args = {}
+		args.update(csrf(request))
+		args['form'] = MyRegistrationForm()
 
 	return render(request, "auth/register.html", args)
 

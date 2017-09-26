@@ -1,17 +1,14 @@
-{% extends "base.html" %}
+{% extends "base_unreg.html" %}
 
 {% block content %}
 
 <header>
 
-<H1>Hi {{full_name}}. Logged in!</H1>
+	<div class="alert alert-success" role="alert">
+		<H5>Hi {{full_name}}. Logged in!</H5>
+		Click <a href="/accounts/logout/" class="alert-link">here</a> to logout	
+	</div>
 
 </header>
-
-<div>
-
-<p>Click <a href="/accounts/logout/">here</a> to logout</p>
-
-</div>
 
 {% endblock %}

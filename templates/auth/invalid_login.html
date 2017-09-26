@@ -1,17 +1,14 @@
-{% extends "base.html" %}
+{% extends "base_unreg.html" %}
 
 {% block content %}
 
 <header>
 
-<H1>Your login details are invalid!</H1>
+<div class="alert alert-danger" role="alert">
+	<H5>Your login details are invalid!</H5>
+	Click <a href="/accounts/login/" class="alert-link">here</a> to login again	
+</div>
 
 </header>
-
-<div>
-
-<p>Click <a href="/accounts/login/">here</a> to login again</p>
-
-</div>
 
 {% endblock %}

@@ -1,17 +1,14 @@
-{% extends "base.html" %}
+{% extends "base_unreg.html" %}
 
 {% block content %}
 
 <header>
 
-<H1>You have to authenticate in the Primple</H1>
+	<div class="alert alert-danger" role="alert">
+		<H5>You have to authenticate in the Primple</H5>
+		Click <a href="/accounts/login/" class="alert-link">here</a> to login	
+	</div>
 
 </header>
-
-<div>
-
-<p>Click <a href="/accounts/login/">here</a> to login</p>
-
-</div>
 
 {% endblock %}
