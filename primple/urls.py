@@ -32,7 +32,9 @@ urlpatterns = [
     # user_desktop
     url(r'^user_desktop/', knowledge_base_views.user_desktop),
 
+    # knowledge_base
     #url(r'^knowledge_base/$', knowledge_base_views.getList, name='getList')
-    url(r'^knowledge_base/', include('knowledge_base.urls')),
+    url(r'^knowledge_base/$', knowledge_base_views.index),
+    url(r'^knowledge_base/get/(?P<knowledge_base_id>\d+)/$', knowledge_base_views.knowledge_base_entry),
     url(r'^$', knowledge_base_views.home)
 ]

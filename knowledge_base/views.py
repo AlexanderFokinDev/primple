@@ -5,16 +5,26 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib import auth
-from forms import MyRegistrationForm
+from .forms import MyRegistrationForm
 from django.template.context_processors import csrf 
+from knowledge_base.models import KnowledgeBase
 
 # Create your views here.
 def index(request):
 
 	if request.user.is_authenticated():
-		name = "Knowledge base"
-		html = "<html><body>Hi %s, this seems to have worked</body></html>" % name
-		return HttpResponse(html)
+		return render(request,
+					 "knowledge_base/kblist.html", 
+					 {'knowledge_base': KnowledgeBase.objects.all()})
+	else:
+		return render(request, "auth/need_authenticate.html")
+
+def knowledge_base_entry(request, knowledge_base_id=1):
+
+	if request.user.is_authenticated():
+		return render(request,
+					 "knowledge_base/kbentry.html", 
+					 {'knowledge_base_entry': KnowledgeBase.objects.get(id=knowledge_base_id)})
 	else:
 		return render(request, "auth/need_authenticate.html")
 

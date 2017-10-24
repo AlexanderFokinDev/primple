@@ -1,0 +1,14 @@
+{% extends "base_reg.html" %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+	<div class="row border border-primary">
+		<div class="col-lg-2">{{ knowledge_base_entry.id }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.question }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.response }}</div>
+	</div>
+</div>
+	
+{% endblock %}

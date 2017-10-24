@@ -1,0 +1,15 @@
+{% extends "base_reg.html" %}
+
+
+{% block content %}
+<div>		
+	{% for entry in knowledge_base %}
+	<div class="container-fluid">
+		<div class="row border border-primary">
+			<div class="col-lg-6"><a href="/knowledge_base/get/{{ entry.id }}/">{{ entry.question }}</a></div>
+			<div class="col-lg-6">{{ entry.response }}</div>
+		</div>
+	</div>
+	{% endfor %}
+</div>
+{% endblock %}
