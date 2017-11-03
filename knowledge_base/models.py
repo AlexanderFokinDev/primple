@@ -9,7 +9,10 @@ class KnowledgeBase(models.Model):
 
 	#id = models.IntegerField(primary_key=True)
 	question = models.TextField()
-	response = models.TextField()
+	response = models.TextField(blank=True)
+	short_description = models.TextField()
+	create_date = models.DateField(auto_now_add=True)
+	change_date = models.DateField(auto_now=True)
 
 	#def __init__(self, question, response):
 		#self.id = id
