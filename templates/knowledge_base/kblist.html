@@ -2,14 +2,27 @@
 
 
 {% block content %}
-<div>		
-	{% for entry in knowledge_base %}
+<div>
 	<div class="container-fluid">
-		<div class="row border border-primary">
-			<div class="col-lg-6"><a href="/knowledge_base/get/{{ entry.id }}/">{{ entry.question }}</a></div>
-			<div class="col-lg-6">{{ entry.response }}</div>
+
+		<div class="row justify-content-center">
+			<div class="col-lg-9">
+				<p class="h3 text-center">1C-Trade</p>
+			</div>
 		</div>
+
+		{% for entry in knowledge_base %}
+		<div class="row justify-content-center border border-bottom-0 border-primary">
+			<div class="col-lg-9">
+				<div><strong>{{ entry.question }}</strong></div>
+				<div><small>author and {{ entry.create_date }}</small></div>
+				<div>{{ entry.response }}</div>
+				<div class="text-left"><a href="/knowledge_base/get/{{ entry.id }}/">Read more >></a></div>
+			</div>
+		</div>
+		<div class="row justify-content-center">&nbsp;</div> 
+		{% endfor %}
+
 	</div>
-	{% endfor %}
 </div>
 {% endblock %}
