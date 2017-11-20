@@ -2,6 +2,9 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from django.contrib.auth.models import User
+from projects.models import Project
+from projects.models import Section
 
 # Create your models here.
 class KnowledgeBase(models.Model):
@@ -10,9 +13,14 @@ class KnowledgeBase(models.Model):
 	#id = models.IntegerField(primary_key=True)
 	question = models.TextField()
 	response = models.TextField(blank=True)
-	short_description = models.TextField()
-	create_date = models.DateField(auto_now_add=True)
-	change_date = models.DateField(auto_now=True)
+	short_description = models.CharField(blank=True, max_length=256)
+	create_date = models.DateTimeField(auto_now_add=True)
+	change_date = models.DateTimeField(auto_now=True)
+	project = models.ForeignKey(Project, on_delete=models.CASCADE, blank=True)
+	author_query = models.ForeignKey(User, verbose_name='Author of query', related_name='author_query')
+	author_answer = models.ForeignKey(User, verbose_name='Author of answer', related_name='author_answer')
+	section = models.ForeignKey(Section, on_delete=models.CASCADE, blank=True)
+	key_words = models.CharField(blank=True, max_length=256)
 
 	#def __init__(self, question, response):
 		#self.id = id
