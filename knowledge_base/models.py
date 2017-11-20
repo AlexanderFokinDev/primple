@@ -13,6 +13,7 @@ class KnowledgeBase(models.Model):
 	#id = models.IntegerField(primary_key=True)
 	question = models.TextField()
 	response = models.TextField(blank=True)
+<<<<<<< HEAD
 	short_description = models.CharField(blank=True, max_length=256)
 	create_date = models.DateTimeField(auto_now_add=True)
 	change_date = models.DateTimeField(auto_now=True)
@@ -21,6 +22,11 @@ class KnowledgeBase(models.Model):
 	author_answer = models.ForeignKey(User, verbose_name='Author of answer', related_name='author_answer')
 	section = models.ForeignKey(Section, on_delete=models.CASCADE, blank=True)
 	key_words = models.CharField(blank=True, max_length=256)
+=======
+	short_description = models.TextField()
+	create_date = models.DateField(auto_now_add=True)
+	change_date = models.DateField(auto_now=True)
+>>>>>>> 8f5f05234c0874bef5d769085ff9616775c772f9
 
 	#def __init__(self, question, response):
 		#self.id = id
