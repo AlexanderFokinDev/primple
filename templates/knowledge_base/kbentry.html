@@ -9,6 +9,21 @@
 		<div class="col-lg-5">{{ knowledge_base_entry.question }}</div>
 		<div class="col-lg-5">{{ knowledge_base_entry.response }}</div>
 	</div>
+	<div class="row border border-primary">
+		<div class="col-lg-2">{{ knowledge_base_entry.short_description }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.create_date }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.change_date }}</div>
+	</div>
+	<div class="row border border-primary">
+		<div class="col-lg-2">{{ knowledge_base_entry.project }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.key_words }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.author_query }}</div>
+	</div>
+	<div class="row border border-primary">
+		<div class="col-lg-2">{{ knowledge_base_entry.author_answer }}</div>
+		<div class="col-lg-5">{{ knowledge_base_entry.section }}</div>
+		<div class="col-lg-5"></div>
+	</div>
 </div>
 	
 {% endblock %}

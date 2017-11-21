@@ -15,8 +15,9 @@
 		<div class="row justify-content-center border border-bottom-0 border-primary">
 			<div class="col-lg-9">
 				<div><strong>{{ entry.question }}</strong></div>
-				<div><small>author and {{ entry.create_date }}</small></div>
+				<div><small>{{ entry.author_query }} {{ entry.create_date|date:"SHORT_DATETIME_FORMAT" }}</small></div><br>
 				<div>{{ entry.response }}</div>
+				<div><small>{{ entry.author_answer }} {{ entry.change_date|date:"SHORT_DATETIME_FORMAT" }}</small></div>
 				<div class="text-left"><a href="/knowledge_base/get/{{ entry.id }}/">Read more >></a></div>
 			</div>
 		</div>
