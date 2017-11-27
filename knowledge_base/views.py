@@ -19,6 +19,17 @@ def index(request):
 	else:
 		return render(request, "auth/need_authenticate.html")
 
+# index page
+def home(request):
+
+	if request.user.is_authenticated():
+		return HttpResponseRedirect('/user_desktop/')
+	else:
+		return render(request, "index.html")
+
+#--------------------------------------------------------------------
+# knowledge_base views
+
 def knowledge_base_entry(request, knowledge_base_id=1):
 
 	if request.user.is_authenticated():
@@ -28,14 +39,15 @@ def knowledge_base_entry(request, knowledge_base_id=1):
 	else:
 		return render(request, "auth/need_authenticate.html")
 
-
-# index page
-def home(request):
+def knowledge_base_new(request, knowledge_base_id=1):
 
 	if request.user.is_authenticated():
-		return HttpResponseRedirect('/user_desktop/')
+		return render(request, "knowledge_base/kb_new_entry.html")
 	else:
-		return render(request, "index.html")
+		return render(request, "auth/need_authenticate.html")
+
+#--------------------------------------------------------------------
+
 
 #--------------------------------------------------------------------
 # Authenticate views

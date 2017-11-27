@@ -36,5 +36,6 @@ urlpatterns = [
     #url(r'^knowledge_base/$', knowledge_base_views.getList, name='getList')
     url(r'^knowledge_base/$', knowledge_base_views.index),
     url(r'^knowledge_base/get/(?P<knowledge_base_id>\d+)/$', knowledge_base_views.knowledge_base_entry),
+    url(r'^knowledge_base/new/$', knowledge_base_views.knowledge_base_new),
     url(r'^$', knowledge_base_views.home)
 ]
